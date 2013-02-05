@@ -55,6 +55,8 @@ import org.cytoscape.view.model.CyNetworkViewManager;
 import org.cytoscape.work.TaskMonitor;
 import org.cytoscape.model.CyTable;
 import org.cytoscape.model.subnetwork.CyRootNetworkManager;
+import org.cytoscape.view.vizmap.VisualMappingManager;
+
 
 
 
@@ -76,11 +78,11 @@ public class CyniSampleAlgorithmTask extends AbstractCyniTask {
 	 * Creates a new object.
 	 */
 	public CyniSampleAlgorithmTask(final String name, final CyniSampleAlgorithmContext context, CyNetworkFactory networkFactory, CyNetworkViewFactory networkViewFactory,
-			CyNetworkManager networkManager,CyNetworkTableManager netTableMgr, CyRootNetworkManager rootNetMgr,
+			CyNetworkManager networkManager,CyNetworkTableManager netTableMgr, CyRootNetworkManager rootNetMgr, VisualMappingManager vmMgr,
 			CyNetworkViewManager networkViewManager,CyLayoutAlgorithmManager layoutManager, 
 			CyCyniMetricsManager metricsManager, CyTable selectedTable)
 	{
-		super(name, context,networkFactory,networkViewFactory,networkManager, networkViewManager,netTableMgr,rootNetMgr);
+		super(name, context,networkFactory,networkViewFactory,networkManager, networkViewManager,netTableMgr,rootNetMgr, vmMgr);
 		param1 = context.param1;
 		
 		this.mytable = selectedTable;
@@ -136,7 +138,7 @@ public class CyniSampleAlgorithmTask extends AbstractCyniTask {
 		//Display the new network
 		if (!cancelled)
 		{
-			newNetworkView = displayNewNetwork(newNetwork, false);
+			newNetworkView = displayNewNetwork(newNetwork, networkSelected,false);
 			taskMonitor.setProgress(1.0d);
 			layout = layoutManager.getDefaultLayout();
 			Object context = layout.getDefaultLayoutContext();
