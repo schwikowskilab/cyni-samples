@@ -43,6 +43,8 @@ import org.cytoscape.model.CyNetworkManager;
 import org.cytoscape.model.CyNetworkTableManager;
 import org.cytoscape.model.CyTable;
 import org.cytoscape.model.subnetwork.CyRootNetworkManager;
+import org.cytoscape.view.vizmap.VisualMappingManager;
+
 
 
 /**
@@ -62,10 +64,10 @@ public class CyniSampleAlgorithm extends AbstractCyniAlgorithm {
 	}
 
 	public TaskIterator createTaskIterator(Object context, CyNetworkFactory networkFactory, CyNetworkViewFactory networkViewFactory,
-			CyNetworkManager networkManager,CyNetworkTableManager netTableMgr, CyRootNetworkManager rootNetMgr,
+			CyNetworkManager networkManager,CyNetworkTableManager netTableMgr, CyRootNetworkManager rootNetMgr,VisualMappingManager vmMgr,
 			CyNetworkViewManager networkViewManager, CyLayoutAlgorithmManager layoutManager, CyCyniMetricsManager metricsManager) {
 			return new TaskIterator(new CyniSampleAlgorithmTask(getName(),(CyniSampleAlgorithmContext) context,networkFactory,networkViewFactory,
-					networkManager,netTableMgr,rootNetMgr,networkViewManager,layoutManager,metricsManager, selectedTable));
+					networkManager,netTableMgr,rootNetMgr,vmMgr,networkViewManager,layoutManager,metricsManager, selectedTable));
 	}
 	
 	public Object createCyniContext(CyTable table, CyCyniMetricsManager metricsManager, TunableSetter tunableSetter,Map<String, Object> mparams) {
