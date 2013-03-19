@@ -61,6 +61,17 @@
 			<name>Cytoscape Releases</name>
 			<url>http://code.cytoscape.org/nexus/content/repositories/releases/</url>
 		</repository>
+		<repository>
+			<id>cytoscape_apps_api</id>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<name>Cytoscape Apps API Releases</name>
+			<url>http://code.cytoscape.org/nexus/content/repositories/apps/</url>
+		</repository>
 	</repositories>
 
 	<dependencies>
@@ -91,10 +102,8 @@
 		</dependency>
 		<dependency>
 			<groupId>org.cytoscape</groupId>
-			<artifactId>cyni-api</artifactId>
+			<artifactId>cyni-app</artifactId>
 			<version>${cyni.api.version}</version>
-			<scope>system</scope>
-     			<systemPath>/home/oguitart/work/cyniDev/cyniApp/cyni-api/target/cyni-api-1.0-beta1.jar</systemPath>
 		</dependency>
 
 		<dependency>
