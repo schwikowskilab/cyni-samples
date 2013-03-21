@@ -102,7 +102,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.cytoscape</groupId>
-			<artifactId>cyni-app</artifactId>
+			<artifactId>cyni-api</artifactId>
 			<version>${cyni.api.version}</version>
 		</dependency>
 
