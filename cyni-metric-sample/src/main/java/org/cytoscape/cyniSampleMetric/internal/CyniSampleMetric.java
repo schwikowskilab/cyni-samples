@@ -60,5 +60,9 @@ public class CyniSampleMetric extends AbstractCyniMetric {
 		
 		return  result;
 	}
+
+	public void setParameters(Map<String,Object> params){
+		
+	}
 	
 }
