@@ -62,8 +62,7 @@ import org.cytoscape.view.vizmap.VisualMappingManager;
 
 
 /**
- * The BasicInduction provides a very simple Induction, suitable as
- * the default Induction for Cytoscape data readers.
+ * The CyniSampleAlgorithmTask provides a simple example on how to create a cyni task
  */
 public class CyniSampleAlgorithmTask extends AbstractCyniTask {
 	
@@ -72,6 +71,7 @@ public class CyniSampleAlgorithmTask extends AbstractCyniTask {
 	private final Boolean param2;
 	private final List<String> attributeArray;
 	private CyLayoutAlgorithmManager layoutManager;
+	private CyniNetworkUtils netUtils;
 	
 
 	/**
@@ -89,6 +89,7 @@ public class CyniSampleAlgorithmTask extends AbstractCyniTask {
 		this.param2 = context.param2;
 		this.attributeArray = null;
 		this.layoutManager = layoutManager;
+		this.netUtils = new CyniNetworkUtils(networkViewFactory,networkManager,networkViewManager,netTableMgr,rootNetMgr,vmMgr);
 		
 	}
 
@@ -114,7 +115,7 @@ public class CyniSampleAlgorithmTask extends AbstractCyniTask {
 		
 		
 		//Check if a network is associated to the selected table
-		networkSelected = getNetworkAssociatedToTable(mytable);
+		networkSelected = netUtils.getNetworkAssociatedToTable(mytable);
 		
 		// Create the CyniTable
 		//CyniTable data = new CyniTable(mytable,attributeArray.toArray(new String[0]), false, false, selectedOnly);
@@ -138,7 +139,7 @@ public class CyniSampleAlgorithmTask extends AbstractCyniTask {
 		//Display the new network
 		if (!cancelled)
 		{
-			newNetworkView = displayNewNetwork(newNetwork, networkSelected,false);
+			newNetworkView = netUtils.displayNewNetwork(newNetwork, networkSelected,false);
 			taskMonitor.setProgress(1.0d);
 			layout = layoutManager.getDefaultLayout();
 			Object context = layout.getDefaultLayoutContext();
