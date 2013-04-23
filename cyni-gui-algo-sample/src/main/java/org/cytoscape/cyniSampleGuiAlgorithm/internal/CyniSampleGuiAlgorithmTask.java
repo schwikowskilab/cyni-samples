@@ -27,7 +27,7 @@
   along with this library; if not, write to the Free Software Foundation,
   Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.
 */
-package org.cytoscape.cyniSampleAlgorithm.internal;
+package org.cytoscape.cyniSampleGuiAlgorithm.internal;
 
 
 
@@ -64,11 +64,9 @@ import org.cytoscape.view.vizmap.VisualMappingManager;
 /**
  * The CyniSampleAlgorithmTask provides a simple example on how to create a cyni task
  */
-public class CyniSampleAlgorithmTask extends AbstractCyniTask {
+public class CyniSampleGuiAlgorithmTask extends AbstractCyniTask {
 	
-	private  final int param1;
 	private final CyTable mytable;
-	private final Boolean param2;
 	private final List<String> attributeArray;
 	private CyLayoutAlgorithmManager layoutManager;
 	private CyniNetworkUtils netUtils;
@@ -77,16 +75,14 @@ public class CyniSampleAlgorithmTask extends AbstractCyniTask {
 	/**
 	 * Creates a new object.
 	 */
-	public CyniSampleAlgorithmTask(final String name, final CyniSampleAlgorithmContext context, CyNetworkFactory networkFactory, CyNetworkViewFactory networkViewFactory,
+	public CyniSampleGuiAlgorithmTask(final String name, final CyniSampleGuiAlgorithmContext context, CyNetworkFactory networkFactory, CyNetworkViewFactory networkViewFactory,
 			CyNetworkManager networkManager,CyNetworkTableManager netTableMgr, CyRootNetworkManager rootNetMgr, VisualMappingManager vmMgr,
 			CyNetworkViewManager networkViewManager,CyLayoutAlgorithmManager layoutManager, 
 			CyCyniMetricsManager metricsManager, CyTable selectedTable)
 	{
 		super(name, context,networkFactory,networkViewFactory,networkManager, networkViewManager,netTableMgr,rootNetMgr, vmMgr);
-		param1 = context.param1;
 		
 		this.mytable = selectedTable;
-		this.param2 = context.param2;
 		this.attributeArray = null;
 		this.layoutManager = layoutManager;
 		this.netUtils = new CyniNetworkUtils(networkViewFactory,networkManager,networkViewManager,netTableMgr,rootNetMgr,vmMgr);
