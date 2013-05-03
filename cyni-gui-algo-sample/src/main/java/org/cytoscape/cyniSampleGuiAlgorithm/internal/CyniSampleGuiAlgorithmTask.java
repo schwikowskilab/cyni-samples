@@ -1,46 +1,33 @@
 /*
-  File: EqualDiscretizationTask.java
-
-  Copyright (c) 2006, 2010, The Cytoscape Consortium (www.cytoscape.org)
-
-  This library is free software; you can redistribute it and/or modify it
-  under the terms of the GNU Lesser General Public License as published
-  by the Free Software Foundation; either version 2.1 of the License, or
-  any later version.
-
-  This library is distributed in the hope that it will be useful, but
-  WITHOUT ANY WARRANTY, WITHOUT EVEN THE IMPLIED WARRANTY OF
-  MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.  The software and
-  documentation provided hereunder is on an "as is" basis, and the
-  Institute for Systems Biology and the Whitehead Institute
-  have no obligations to provide maintenance, support,
-  updates, enhancements or modifications.  In no event shall the
-  Institute for Systems Biology and the Whitehead Institute
-  be liable to any party for direct, indirect, special,
-  incidental or consequential damages, including lost profits, arising
-  out of the use of this software and its documentation, even if the
-  Institute for Systems Biology and the Whitehead Institute
-  have been advised of the possibility of such damage.  See
-  the GNU Lesser General Public License for more details.
-
-  You should have received a copy of the GNU Lesser General Public License
-  along with this library; if not, write to the Free Software Foundation,
-  Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.
-*/
-package org.cytoscape.cyniSampleAlgorithm.internal;
+ * #%L
+ * Cyni Sample Gui implementaion
+ * $Id:$
+ * $HeadURL:$
+ * %%
+ * Copyright (C) 2006 - 2013 The Cytoscape Consortium
+ * %%
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as 
+ * published by the Free Software Foundation, either version 2.1 of the 
+ * License, or (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Lesser Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Lesser Public 
+ * License along with this program.  If not, see
+ * <http://www.gnu.org/licenses/lgpl-2.1.html>.
+ * #L%
+ */
+package org.cytoscape.cyniSampleGuiAlgorithm.internal;
 
 
 
-import java.util.ArrayList;
-import java.util.Arrays;
+
 import java.util.List;
-import java.util.Set;
-import java.util.HashMap;
-import java.util.Map;
 
-import javax.swing.JOptionPane;
-
-import org.cytoscape.model.CyColumn;
 import org.cytoscape.model.CyNetwork;
 import org.cytoscape.model.CyNetworkFactory;
 import org.cytoscape.model.CyNetworkManager;
@@ -64,29 +51,29 @@ import org.cytoscape.view.vizmap.VisualMappingManager;
 /**
  * The CyniSampleAlgorithmTask provides a simple example on how to create a cyni task
  */
-public class CyniSampleAlgorithmTask extends AbstractCyniTask {
+public class CyniSampleGuiAlgorithmTask extends AbstractCyniTask {
 	
-	private  final int param1;
 	private final CyTable mytable;
-	private final Boolean param2;
 	private final List<String> attributeArray;
 	private CyLayoutAlgorithmManager layoutManager;
 	private CyniNetworkUtils netUtils;
+	private double param1;
+	private double param2;
 	
 
 	/**
 	 * Creates a new object.
 	 */
-	public CyniSampleAlgorithmTask(final String name, final CyniSampleAlgorithmContext context, CyNetworkFactory networkFactory, CyNetworkViewFactory networkViewFactory,
+	public CyniSampleGuiAlgorithmTask(final String name, final CyniSampleGuiAlgorithmContext context, CyNetworkFactory networkFactory, CyNetworkViewFactory networkViewFactory,
 			CyNetworkManager networkManager,CyNetworkTableManager netTableMgr, CyRootNetworkManager rootNetMgr, VisualMappingManager vmMgr,
 			CyNetworkViewManager networkViewManager,CyLayoutAlgorithmManager layoutManager, 
 			CyCyniMetricsManager metricsManager, CyTable selectedTable)
 	{
 		super(name, context,networkFactory,networkViewFactory,networkManager, networkViewManager,netTableMgr,rootNetMgr, vmMgr);
-		param1 = context.param1;
-		
+		//Get Context data
+		this.param1 = context.getParam1();
+		this.param2 = context.getParam2();
 		this.mytable = selectedTable;
-		this.param2 = context.param2;
 		this.attributeArray = null;
 		this.layoutManager = layoutManager;
 		this.netUtils = new CyniNetworkUtils(networkViewFactory,networkManager,networkViewManager,netTableMgr,rootNetMgr,vmMgr);

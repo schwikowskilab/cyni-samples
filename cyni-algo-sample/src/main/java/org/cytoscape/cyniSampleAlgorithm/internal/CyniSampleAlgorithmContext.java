@@ -3,13 +3,13 @@ package org.cytoscape.cyniSampleAlgorithm.internal;
 import java.io.IOException;
 import java.util.List;
 
-import org.cytoscape.cyni.AbstractCyniAlgorithmContext;
+import org.cytoscape.cyni.CyniAlgorithmContext;
 import org.cytoscape.work.util.*;
 
 import org.cytoscape.work.Tunable;
 import org.cytoscape.work.TunableValidator;
 
-public class CyniSampleAlgorithmContext extends AbstractCyniAlgorithmContext implements TunableValidator {
+public class CyniSampleAlgorithmContext extends CyniAlgorithmContext implements TunableValidator {
 	@Tunable(description="Parameter 1")
 	public int param1 = 10;
 	
