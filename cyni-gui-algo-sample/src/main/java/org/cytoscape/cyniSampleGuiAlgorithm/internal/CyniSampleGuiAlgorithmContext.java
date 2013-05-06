@@ -25,7 +25,7 @@
 package org.cytoscape.cyniSampleGuiAlgorithm.internal;
 
 import org.cytoscape.cyni.*;
-import javax.swing.JPanel;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -80,7 +80,7 @@ public class CyniSampleGuiAlgorithmContext extends CyniAlgorithmContext  {
         dataModel2.setMinimum(0);
         dataModel2.setMaximum(10);
 	}
-	public boolean contextHasOwnSwingComponent()
+	public boolean contextHasOwnSwingPanel()
 	{
 		return true;
 	}
@@ -95,7 +95,12 @@ public class CyniSampleGuiAlgorithmContext extends CyniAlgorithmContext  {
 		if(getParam2() > 0)
 			return true;
 		else
+		{
+			JOptionPane.showMessageDialog(new JFrame(), "Incorrect Param2, needs to be positive",
+				      "Input Validation Problem",
+				      JOptionPane.ERROR_MESSAGE);
 			return false;
+		}
 	}
 	
 	public double getParam1()

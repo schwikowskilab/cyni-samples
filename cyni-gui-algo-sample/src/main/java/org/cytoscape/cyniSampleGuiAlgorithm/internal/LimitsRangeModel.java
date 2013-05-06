@@ -141,6 +141,7 @@ public class LimitsRangeModel implements BoundedRangeModel {
         }
 
         if (changeOccurred) {
+        	setLimit(value);
             fireStateChanged();
         }
     }
