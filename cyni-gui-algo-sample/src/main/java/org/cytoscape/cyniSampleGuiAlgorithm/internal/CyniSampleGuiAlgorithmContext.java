@@ -90,6 +90,14 @@ public class CyniSampleGuiAlgorithmContext extends CyniAlgorithmContext  {
 		return mainPanel;
 	}
 	
+	public boolean contextContentValid()
+	{
+		if(getParam2() > 0)
+			return true;
+		else
+			return false;
+	}
+	
 	public double getParam1()
 	{
 		return param1Panel.getLimit();
@@ -99,4 +107,6 @@ public class CyniSampleGuiAlgorithmContext extends CyniAlgorithmContext  {
 	{
 		return param2Panel.getLimit();
 	}
+	
+	
 }

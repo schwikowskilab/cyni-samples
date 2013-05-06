@@ -50,7 +50,7 @@ public class CyniSampleGuiAlgorithm extends AbstractCyniAlgorithm {
 	 * Creates a new EqualDiscretization object.
 	 */
 	public CyniSampleGuiAlgorithm() {
-		super("sampleAlgo.cyni","Cyni Sample Algorithm",true,CyniCategory.INDUCTION);
+		super("sampleGuiAlgo.cyni","Cyni Sample Gui Algorithm",true,CyniCategory.INDUCTION);
 	
 	}
 
