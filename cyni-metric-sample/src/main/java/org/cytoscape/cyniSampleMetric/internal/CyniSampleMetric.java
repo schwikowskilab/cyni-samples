@@ -45,8 +45,8 @@ public class CyniSampleMetric extends AbstractCyniMetric {
 	 */
 	public CyniSampleMetric() {
 		super("sampleMetric.cyni","Cyni Sample Metric");
-		addType(CyniMetricTypes.INPUT_NUMBERS.toString());
-		addType(CyniMetricTypes.CORRELATION_METRIC.toString());
+		addTag(CyniMetricTags.INPUT_NUMBERS.toString());
+		addTag(CyniMetricTags.CORRELATION_METRIC.toString());
 		
 	}
 
