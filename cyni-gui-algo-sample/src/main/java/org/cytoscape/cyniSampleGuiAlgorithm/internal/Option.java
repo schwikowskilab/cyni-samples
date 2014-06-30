@@ -22,7 +22,7 @@
  * #L%
  */
 
-package org.cytoscape.cyniSampleGuiAlgorithm.internal;
+package fr.systemsbiology.cyniSampleGuiAlgorithm.internal;
 
 
 public class Option {

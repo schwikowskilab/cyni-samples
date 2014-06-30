@@ -21,7 +21,7 @@
  * <http://www.gnu.org/licenses/lgpl-2.1.html>.
  * #L%
  */
-package org.cytoscape.cyniSampleGuiAlgorithm.internal;
+package fr.systemsbiology.cyniSampleGuiAlgorithm.internal;
 
 
 import java.util.*;
