@@ -27,10 +27,10 @@
   along with this library; if not, write to the Free Software Foundation,
   Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.
 */
-package org.cytoscape.cyniSampleMetric.internal;
+package fr.systemsbiology.cyniSampleMetric.internal;
 
 
-import org.cytoscape.cyni.*;
+import fr.systemsbiology.cyni.*;
 
 import java.util.*;
 
@@ -45,8 +45,8 @@ public class CyniSampleMetric extends AbstractCyniMetric {
 	 */
 	public CyniSampleMetric() {
 		super("sampleMetric.cyni","Cyni Sample Metric");
-		addType(CyniMetricTypes.INPUT_NUMBERS.toString());
-		addType(CyniMetricTypes.CORRELATION_METRIC.toString());
+		addTag(CyniMetricTags.INPUT_NUMBERS.toString());
+		addTag(CyniMetricTags.CORRELATION_METRIC.toString());
 		
 	}
 

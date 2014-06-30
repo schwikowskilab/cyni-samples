@@ -1,9 +1,9 @@
-package org.cytoscape.cyniSampleAlgorithm.internal;
+package fr.systemsbiology.cyniSampleAlgorithm.internal;
 
 import java.io.IOException;
 import java.util.List;
 
-import org.cytoscape.cyni.CyniAlgorithmContext;
+import fr.systemsbiology.cyni.CyniAlgorithmContext;
 import org.cytoscape.work.util.*;
 
 import org.cytoscape.work.Tunable;

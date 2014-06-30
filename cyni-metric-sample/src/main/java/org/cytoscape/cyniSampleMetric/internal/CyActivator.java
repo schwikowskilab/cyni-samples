@@ -1,11 +1,11 @@
-package org.cytoscape.cyniSampleMetric.internal;
+package fr.systemsbiology.cyniSampleMetric.internal;
 
 import org.cytoscape.application.swing.CySwingApplication;
 
 
 
 import org.cytoscape.application.swing.CyAction;
-import org.cytoscape.cyni.*;
+import fr.systemsbiology.cyni.*;
 
 import org.osgi.framework.BundleContext;
 

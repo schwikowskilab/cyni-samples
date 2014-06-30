@@ -22,9 +22,9 @@
  * #L%
  */
 
-package org.cytoscape.cyniSampleGuiAlgorithm.internal;
+package fr.systemsbiology.cyniSampleGuiAlgorithm.internal;
 
-import org.cytoscape.cyni.*;
+import fr.systemsbiology.cyni.*;
 
 import javax.swing.*;
 import java.awt.*;
